@@ -1,0 +1,25 @@
+version: "3"
+services: 
+    # Redis server
+    redis:
+        container_name: docker-redis
+        restart: always
+        image: redis
+        ports: 
+            - "6379:6379"
+    # After container was started,
+    # shell> docker logs docker-mysql
+    # Password will be appeared in the output
+    # shell> docker exec -it docker-mysql bash
+    # shell> mysql -u root -p
+    # Put the password above
+    # mysql> CREATE USER 'test'@'%' IDENTIFIED BY 'password';
+    # mysql> GRANT ALL PRIVILEGES ON *.* TO 'test'@'%';
+    # mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+    # mysql> flush privileges;
+    mysql:
+        container_name: docker-mysql
+        image: mysql/mysql-server
+        restart: always
+        ports:
+            - "3306:3306"
