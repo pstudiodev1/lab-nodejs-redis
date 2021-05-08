@@ -15,7 +15,7 @@ services:
     # Put the password above
     # mysql> CREATE USER 'test'@'%' IDENTIFIED BY 'password';
     # mysql> GRANT ALL PRIVILEGES ON *.* TO 'test'@'%';
-    # mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+    # mysql> ALTER USER 'test'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
     # mysql> flush privileges;
     mysql:
         container_name: docker-mysql
